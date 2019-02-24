@@ -1,0 +1,54 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# I11
+#
+DEF I11 U 0 40 Y Y 1 F N
+F0 "U" -100 350 50 H V C CNN
+F1 "I11" 100 350 50 H V C CNN
+F2 "" -100 350 50 H I C CNN
+F3 "" -100 350 50 H I C CNN
+DRAW
+S -300 250 300 -250 0 1 0 N
+X Vcc 1 -400 150 100 R 50 50 1 1 W
+X Tx 2 -400 50 100 R 50 50 1 1 O
+X Rx 3 -400 -50 100 R 50 50 1 1 I
+X Gnd 4 -400 -150 100 R 50 50 1 1 W
+X A+ 5 400 150 100 L 50 50 1 1 B
+X B- 6 400 50 100 L 50 50 1 1 B
+X Earth 7 400 -50 100 L 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+# Vac_measure
+#
+DEF Vac_measure Vac_measure 0 40 Y Y 1 F P
+F0 "Vac_measure" 0 0 50 H V C CNN
+F1 "Vac_measure" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+A -25 125 25 1 1799 1 1 10 N 0 125 -50 125
+A 25 125 25 -1799 -1 1 1 10 N 0 125 50 125
+C 0 125 75 1 1 10 N
+P 2 1 1 0 0 0 0 50 N
+X VAC_measure 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# Vref
+#
+DEF Vref PWR 0 40 Y Y 1 F P
+F0 "PWR" 0 0 50 H V C CNN
+F1 "Vref" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 1 0 -30 50 0 100 N
+P 2 1 1 0 0 0 0 100 N
+P 2 1 1 0 0 100 30 50 N
+X Aref 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+#End Library

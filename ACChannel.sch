@@ -1,0 +1,433 @@
+EESchema Schematic File Version 4
+LIBS:SmartDimmer-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Triac_Thyristor:BT138-600 Q?
+U 1 1 5C72A9D2
+P 5400 3400
+F 0 "Q?" H 5529 3446 50  0000 L CNN
+F 1 "BT138-600" H 5529 3355 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5600 3325 50  0001 L CIN
+F 3 "http://www.nxp.com/documents/data_sheet/BT138_SER_D_E.pdf" H 5400 3400 50  0001 L CNN
+	1    5400 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Relay_SolidState:MOC3021M U?
+U 1 1 5C72AAC7
+P 3700 3400
+F 0 "U?" H 3700 3725 50  0000 C CNN
+F 1 "MOC3021M" H 3700 3634 50  0000 C CNN
+F 2 "" H 3500 3200 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/MO/MOC3020M.pdf" H 3675 3400 50  0001 L CNN
+	1    3700 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C72AD11
+P 4150 3300
+F 0 "R?" V 4357 3300 50  0000 C CNN
+F 1 "360" V 4266 3300 50  0000 C CNN
+F 2 "" V 4080 3300 50  0001 C CNN
+F 3 "~" H 4150 3300 50  0001 C CNN
+	1    4150 3300
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C72AEF3
+P 4300 3450
+F 0 "C?" H 4415 3496 50  0000 L CNN
+F 1 "0.05uF" H 4415 3405 50  0000 L CNN
+F 2 "" H 4338 3300 50  0001 C CNN
+F 3 "~" H 4300 3450 50  0001 C CNN
+	1    4300 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C72AFE6
+P 4450 3300
+F 0 "R?" V 4657 3300 50  0000 C CNN
+F 1 "470" V 4566 3300 50  0000 C CNN
+F 2 "" V 4380 3300 50  0001 C CNN
+F 3 "~" H 4450 3300 50  0001 C CNN
+	1    4450 3300
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C72B057
+P 3250 3300
+F 0 "R?" V 3043 3300 50  0000 C CNN
+F 1 "470" V 3134 3300 50  0000 C CNN
+F 2 "" V 3180 3300 50  0001 C CNN
+F 3 "~" H 3250 3300 50  0001 C CNN
+	1    3250 3300
+	0    -1   1    0   
+$EndComp
+Text HLabel 3400 3500 0    50   Input ~ 0
+control_in
+$Comp
+L power:+5V #PWR?
+U 1 1 5C72B3C0
+P 3100 3300
+F 0 "#PWR?" H 3100 3150 50  0001 C CNN
+F 1 "+5V" H 3115 3473 50  0000 C CNN
+F 2 "" H 3100 3300 50  0001 C CNN
+F 3 "" H 3100 3300 50  0001 C CNN
+	1    3100 3300
+	1    0    0    -1  
+$EndComp
+Connection ~ 4300 3300
+Wire Wire Line
+	4300 3600 4000 3600
+Wire Wire Line
+	4000 3600 4000 3500
+Wire Wire Line
+	4300 3600 5250 3600
+Wire Wire Line
+	5250 3600 5250 3500
+Connection ~ 4300 3600
+Wire Wire Line
+	4600 3300 5150 3300
+Wire Wire Line
+	5150 3300 5150 3250
+Wire Wire Line
+	5150 3250 5400 3250
+Connection ~ 5400 3250
+$Comp
+L Device:C C?
+U 1 1 5C72B61C
+P 6350 3550
+F 0 "C?" H 6465 3596 50  0000 L CNN
+F 1 "C" H 6465 3505 50  0000 L CNN
+F 2 "" H 6388 3400 50  0001 C CNN
+F 3 "~" H 6350 3550 50  0001 C CNN
+	1    6350 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C72B623
+P 6350 3250
+F 0 "R?" H 6281 3204 50  0000 R CNN
+F 1 "R" H 6281 3295 50  0000 R CNN
+F 2 "" V 6280 3250 50  0001 C CNN
+F 3 "~" H 6350 3250 50  0001 C CNN
+	1    6350 3250
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6350 3100 5750 3100
+Wire Wire Line
+	5750 3100 5750 3250
+Wire Wire Line
+	5750 3250 5400 3250
+Wire Wire Line
+	5400 3550 5800 3550
+Wire Wire Line
+	5800 3550 5800 3700
+Wire Wire Line
+	5800 3700 6350 3700
+Text HLabel 5800 4750 0    50   Output ~ 0
+load_hot
+Text HLabel 6350 3100 2    50   Input ~ 0
+ac_in
+$Comp
+L Sensor_Current:ACS723xLCTR-10AB U?
+U 1 1 5C72C1CB
+P 6200 4650
+AR Path="/5C72C1CB" Ref="U?"  Part="1" 
+AR Path="/5C72A8DC/5C72C1CB" Ref="U?"  Part="1" 
+F 0 "U?" H 6700 4400 50  0000 C CNN
+F 1 "ACS723xLCTR-10AB" H 6850 4250 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6300 4300 50  0001 L CIN
+F 3 "http://www.allegromicro.com/~/media/Files/Datasheets/ACS723-Datasheet.ashx?la=en" H 6200 4650 50  0001 C CNN
+	1    6200 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 4450 5400 4450
+Wire Wire Line
+	5400 4450 5400 3550
+Connection ~ 5400 3550
+$Comp
+L power:GNDA #PWR?
+U 1 1 5C72CB8B
+P 6200 5050
+F 0 "#PWR?" H 6200 4800 50  0001 C CNN
+F 1 "GNDA" H 6205 4877 50  0000 C CNN
+F 2 "" H 6200 5050 50  0001 C CNN
+F 3 "" H 6200 5050 50  0001 C CNN
+	1    6200 5050
+	1    0    0    -1  
+$EndComp
+Text HLabel 6600 4450 2    50   Output ~ 0
+CS_out
+$Comp
+L power:+5VA #PWR?
+U 1 1 5C72CDD0
+P 6600 4750
+F 0 "#PWR?" H 6600 4600 50  0001 C CNN
+F 1 "+5VA" H 6615 4923 50  0000 C CNN
+F 2 "" H 6600 4750 50  0001 C CNN
+F 3 "" H 6600 4750 50  0001 C CNN
+	1    6600 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VA #PWR?
+U 1 1 5C72CE0D
+P 6200 4250
+F 0 "#PWR?" H 6200 4100 50  0001 C CNN
+F 1 "+5VA" H 6215 4423 50  0000 C CNN
+F 2 "" H 6200 4250 50  0001 C CNN
+F 3 "" H 6200 4250 50  0001 C CNN
+	1    6200 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Sensor_Temperature:LM35-NEB U?
+U 1 1 5C7D33B4
+P 5350 2450
+F 0 "U?" H 5020 2496 50  0000 R CNN
+F 1 "LM35-NEB" H 5020 2405 50  0000 R CNN
+F 2 "" H 5400 2200 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm35.pdf" H 5350 2450 50  0001 C CNN
+	1    5350 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 5C7D35B0
+P 5350 2750
+F 0 "#PWR?" H 5350 2500 50  0001 C CNN
+F 1 "GNDA" H 5355 2577 50  0000 C CNN
+F 2 "" H 5350 2750 50  0001 C CNN
+F 3 "" H 5350 2750 50  0001 C CNN
+	1    5350 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VA #PWR?
+U 1 1 5C7D3644
+P 5350 2150
+F 0 "#PWR?" H 5350 2000 50  0001 C CNN
+F 1 "+5VA" H 5365 2323 50  0000 C CNN
+F 2 "" H 5350 2150 50  0001 C CNN
+F 3 "" H 5350 2150 50  0001 C CNN
+	1    5350 2150
+	1    0    0    -1  
+$EndComp
+Text HLabel 5750 2450 2    50   Output ~ 0
+temp_sense
+$Comp
+L power:+5V #PWR?
+U 1 1 5C7D5AF8
+P 6900 1000
+F 0 "#PWR?" H 6900 850 50  0001 C CNN
+F 1 "+5V" H 6915 1173 50  0000 C CNN
+F 2 "" H 6900 1000 50  0001 C CNN
+F 3 "" H 6900 1000 50  0001 C CNN
+	1    6900 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5C7D5B95
+P 6900 1600
+F 0 "#PWR?" H 6900 1350 50  0001 C CNN
+F 1 "GNDD" H 6904 1445 50  0000 C CNN
+F 2 "" H 6900 1600 50  0001 C CNN
+F 3 "" H 6900 1600 50  0001 C CNN
+	1    6900 1600
+	1    0    0    -1  
+$EndComp
+Text HLabel 8350 2300 0    50   Output ~ 0
+temp_sense
+Text HLabel 8350 3100 0    50   Output ~ 0
+CS_out
+$Comp
+L Comparator:LM2901 U?
+U 1 1 5C7D6A30
+P 8650 2200
+F 0 "U?" H 8650 2567 50  0000 C CNN
+F 1 "LM2901" H 8650 2476 50  0000 C CNN
+F 2 "" H 8600 2300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm339.pdf" H 8700 2400 50  0001 C CNN
+	1    8650 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM2901 U?
+U 2 1 5C7D6BFA
+P 8650 3000
+F 0 "U?" H 8650 3367 50  0000 C CNN
+F 1 "LM2901" H 8650 3276 50  0000 C CNN
+F 2 "" H 8600 3100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm339.pdf" H 8700 3200 50  0001 C CNN
+	2    8650 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Comparator:LM2901 U?
+U 3 1 5C7D6C82
+P 8650 3750
+F 0 "U?" H 8650 4117 50  0000 C CNN
+F 1 "LM2901" H 8650 4026 50  0000 C CNN
+F 2 "" H 8600 3850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm339.pdf" H 8700 3950 50  0001 C CNN
+	3    8650 3750
+	1    0    0    -1  
+$EndComp
+Text HLabel 8350 3650 0    50   Output ~ 0
+CS_out
+$Comp
+L Comparator:LM2901 U?
+U 5 1 5C7D6D4B
+P 7000 1300
+F 0 "U?" H 6958 1346 50  0000 L CNN
+F 1 "LM2901" H 6958 1255 50  0000 L CNN
+F 2 "" H 6950 1400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm339.pdf" H 7050 1500 50  0001 C CNN
+	5    7000 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VA #PWR?
+U 1 1 5C7D6E73
+P 7400 2950
+F 0 "#PWR?" H 7400 2800 50  0001 C CNN
+F 1 "+5VA" H 7415 3123 50  0000 C CNN
+F 2 "" H 7400 2950 50  0001 C CNN
+F 3 "" H 7400 2950 50  0001 C CNN
+	1    7400 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C7D6ECD
+P 7400 3100
+F 0 "R?" H 7470 3146 50  0000 L CNN
+F 1 "R" H 7470 3055 50  0000 L CNN
+F 2 "" V 7330 3100 50  0001 C CNN
+F 3 "~" H 7400 3100 50  0001 C CNN
+	1    7400 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C7D6F2A
+P 7400 3400
+F 0 "R?" H 7470 3446 50  0000 L CNN
+F 1 "R" H 7470 3355 50  0000 L CNN
+F 2 "" V 7330 3400 50  0001 C CNN
+F 3 "~" H 7400 3400 50  0001 C CNN
+	1    7400 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C7D6F96
+P 7400 3700
+F 0 "R?" H 7470 3746 50  0000 L CNN
+F 1 "R" H 7470 3655 50  0000 L CNN
+F 2 "" V 7330 3700 50  0001 C CNN
+F 3 "~" H 7400 3700 50  0001 C CNN
+	1    7400 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 5C7D702D
+P 7400 3850
+F 0 "#PWR?" H 7400 3600 50  0001 C CNN
+F 1 "GNDA" H 7405 3677 50  0000 C CNN
+F 2 "" H 7400 3850 50  0001 C CNN
+F 3 "" H 7400 3850 50  0001 C CNN
+	1    7400 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 3250 7850 3250
+Wire Wire Line
+	7850 3250 7850 2900
+Wire Wire Line
+	7850 2900 8350 2900
+Connection ~ 7400 3250
+Wire Wire Line
+	7400 3550 7900 3550
+Wire Wire Line
+	7900 3550 7900 3850
+Wire Wire Line
+	7900 3850 8350 3850
+Connection ~ 7400 3550
+$Comp
+L power:+5VA #PWR?
+U 1 1 5C7D7769
+P 7600 1800
+F 0 "#PWR?" H 7600 1650 50  0001 C CNN
+F 1 "+5VA" H 7615 1973 50  0000 C CNN
+F 2 "" H 7600 1800 50  0001 C CNN
+F 3 "" H 7600 1800 50  0001 C CNN
+	1    7600 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C7D776F
+P 7600 1950
+F 0 "R?" H 7670 1996 50  0000 L CNN
+F 1 "R" H 7670 1905 50  0000 L CNN
+F 2 "" V 7530 1950 50  0001 C CNN
+F 3 "~" H 7600 1950 50  0001 C CNN
+	1    7600 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C7D7776
+P 7600 2250
+F 0 "R?" H 7670 2296 50  0000 L CNN
+F 1 "R" H 7670 2205 50  0000 L CNN
+F 2 "" V 7530 2250 50  0001 C CNN
+F 3 "~" H 7600 2250 50  0001 C CNN
+	1    7600 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 7600 2100
+$Comp
+L power:GNDA #PWR?
+U 1 1 5C7D7923
+P 7600 2400
+F 0 "#PWR?" H 7600 2150 50  0001 C CNN
+F 1 "GNDA" H 7605 2227 50  0000 C CNN
+F 2 "" H 7600 2400 50  0001 C CNN
+F 3 "" H 7600 2400 50  0001 C CNN
+	1    7600 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 2100 8350 2100
+Wire Wire Line
+	8950 3000 8950 3750
+Text HLabel 8950 3000 2    50   Output ~ 0
+OC_protection
+Text HLabel 8950 2200 2    50   Output ~ 0
+OT_protection
+$EndSCHEMATC
