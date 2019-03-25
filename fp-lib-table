@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name SmartDimmer)(type KiCad)(uri ${KIPRJMOD}/SmartDimmer.pretty)(options "")(descr ""))
+  (lib (name Arduino)(type KiCad)(uri ${KIPRJMOD}/arduino-kicad-library/Arduino.pretty)(options "")(descr ""))
+)
