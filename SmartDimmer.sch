@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:SmartDimmer-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -206,8 +205,6 @@ F 3 "" H 5350 2000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 NoConn ~ 5350 3000
-Text GLabel 7950 1700 2    50   Input ~ 0
-Vac_measure
 Text GLabel 5350 2400 0    50   Input ~ 0
 CS_2
 $Comp
@@ -225,13 +222,13 @@ Text GLabel 2450 5500 2    50   Output ~ 0
 Load_hot_1
 Text GLabel 2450 6100 2    50   Input ~ 0
 switch_control_1
-Text GLabel 7950 1500 2    50   Output ~ 0
-switch_control_1
 Text GLabel 7950 1900 2    50   Output ~ 0
+switch_control_1
+Text GLabel 7950 2000 2    50   Output ~ 0
 switch_control_2
-Text GLabel 7950 2100 2    50   Input ~ 0
+Text GLabel 7950 2500 2    50   Input ~ 0
 Switch_1
-Text GLabel 7950 2000 2    50   Input ~ 0
+Text GLabel 7950 2600 2    50   Input ~ 0
 Switch_2
 $Comp
 L Device:L L1
@@ -828,7 +825,7 @@ Text Label 8800 5550 0    50   ~ 0
 VSense-
 Text Label 9700 4500 0    50   ~ 0
 VAmpSense-
-Text Label 9700 5200 0    50   ~ 0
+Text Label 9500 5100 0    50   ~ 0
 VAmpSense+
 Text Label 5350 2100 2    50   ~ 0
 VAmpSense-
@@ -1381,4 +1378,8 @@ F 3 "~" H 10600 3800 50  0001 C CNN
 	1    10600 3800
 	1    0    0    -1  
 $EndComp
+Text GLabel 9700 5200 2    50   Input ~ 0
+Vac_measure
+Text GLabel 7950 1700 2    50   Input ~ 0
+Vac_measure
 $EndSCHEMATC
